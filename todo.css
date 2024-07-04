@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Roboto";
+}
+.bg-container {
+    background-color: #f9fbfe;
+    height: 100vh;
+    font-family: "Roboto";
+}
+
+.main-heading {
+    text-align: center;
+    font-size: 46px;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-decoration: underline;
+    
+}
+
+.todo-background {
+    padding: 20px;
+}
+.create-heading{
+    color: black;
+    font-size: 40px;
+    margin-top: 30px;
+}
+.create{
+    color: black;
+    font-weight: 700;
+}
+.task-input{
+    background-color: white;
+    width: 100%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #e4e7eb;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+}
+.button{
+    margin-top: 20px;
+    background-color: #4c63b6;
+    padding: 5px;
+    width: 80px;
+    color: white;
+    border-radius: 5px;
+    border-width: 0;
+    border-color: #4c63b6;
+}
+.my-heading{
+    color: black;
+    font-size: 40px;
+    margin-top: 50px;
+}
+.bg-item{
+    background-color: #e6f6ff;
+    font-size: 20px;
+    width: 100%;
+    height: 50px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #4c63b6;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+}
+.list-item{
+    display: flex;
+    flex-direction: row;
+    padding-top: 15px;
+}
+.checkbox-input {
+    width: 20px;
+    height: 20px;
+    margin-top: 12px;
+    margin-right: 12px;
+  }
+  .todos-container{
+    margin: 0px;
+    padding: 0px;
+  }
+.line-through{
+    text-decoration: line-through;
+}
+.seperate{
+    width: 8%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

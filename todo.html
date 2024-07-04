@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ac42c3b1f7.js" crossorigin="anonymous"></script>
+    <title>To-Do Application</title>
+    <link rel="stylesheet" href="todo.css">
+</head>
+
+<body>
+    <div class="bg-container">
+        <div class="container">
+            <div class="row todo-background">
+                <div class="col-12">
+                    <h1 class="main-heading">To-do Application</h1>
+                    <h1 class="create-heading"><span class="create">Create</span> Task</h1>
+                    <input type="text" placeholder="What needs to be done!!" id="taskInput" class="task-input"/><br/>
+                    <button class="button" id="addBtn">ADD</button>
+                    <div id="editContainer"></div>
+                    <h1 class="my-heading"><span class="create">My</span> Tasks</h1>
+                    <ul class="todos-container" id="todoList" type="none">
+                       <!--here, when we click on add button the tasks will be added in this area-->
+                    </ul>
+                    <button class="button mt-4" id="saveBtn">SAVE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="todo.js"></script>
+</body>
+
+</html>
