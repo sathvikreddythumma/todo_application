@@ -12,6 +12,7 @@ let searchText="";
 
 
 function edit_item(todo,l_id){
+    editContainer.textContent="";
     let edit_label=document.getElementById(l_id);
     let edit_todo=document.getElementById(todo);
 
@@ -196,11 +197,12 @@ function get_data(){
         return [];
     else
         return parsing;
+    
 }
 
 backBtn.addEventListener("click",function(event){
     searchInput.value="";
-
+    todoList.textContent="";
     for(let item of add_todo_list){
         //console.log(item);
         display(item);
@@ -240,14 +242,6 @@ addBtn.addEventListener("click",function(event){
 });
 
 function search(event){
-    //console.log(searchText);
-    //if(searchText===""){
-        //for(let item of add_todo_list){
-         //   console.log("empty");
-           // display(item);
-           // }
-    //}
-    //else{
     
     for(let each of add_todo_list){
         
@@ -257,13 +251,12 @@ function search(event){
             display(each);
         }
         else{
-            //if(d===undefined){
-            //console.log(event.target);
+
             if(todoList.textContent==="")
             errorPara.textContent="There are no such tasks*";
             //console.log(d);
         }
-//}
+
     //console.log(display(each));
 }
 }
@@ -292,8 +285,9 @@ let add_todo_list=get_data();
 let count=add_todo_list.length;
 //console.log(add_todo_list);
 
+
 for(let item of add_todo_list){
-    console.log(item);
+    //console.log(item);
     display(item);
     }
 //let res=localStorage.getItem("todos");
