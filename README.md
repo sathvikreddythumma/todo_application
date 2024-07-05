@@ -1,4 +1,4 @@
-Todo Application
+Todo Application: 
 This is a simple Todo application built with HTML,CSS,JS. It allows users to manage their tasks efficiently.
 
  NOTE: Whatever you perform actions save it immediately.
