@@ -17,15 +17,31 @@
             <div class="row todo-background">
                 <div class="col-12">
                     <h1 class="main-heading">To-do Application</h1>
+
+                    <div>
+                    <h1 class="create-heading"><span class="create">Search</span> Task</h1>
+                    <input type="search" placeholder="search here!!!" id="searchInput" class="task-input"/><br/>
+                    <p class="error" id="errorPara"></p>
+                    <button class="button" id="backBtn">BACK</button>
+                    </div>
+
+                    <div>
                     <h1 class="create-heading"><span class="create">Create</span> Task</h1>
                     <input type="text" placeholder="What needs to be done!!" id="taskInput" class="task-input"/><br/>
+                    <p class="error" id="errMsg"></p>
                     <button class="button" id="addBtn">ADD</button>
+                    </div>
+
                     <div id="editContainer"></div>
                     <h1 class="my-heading"><span class="create">My</span> Tasks</h1>
+
                     <ul class="todos-container" id="todoList" type="none">
+                       <!--<div class="d-flex flex-row justify-content-center"><div class="spinner-border" role="status" id="spinner"></div></div>-->
                        <!--here, when we click on add button the tasks will be added in this area-->
                     </ul>
+
                     <button class="button mt-4" id="saveBtn">SAVE</button>
+                    
                 </div>
             </div>
         </div>

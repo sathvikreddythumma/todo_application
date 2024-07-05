@@ -44,8 +44,9 @@ body{
     margin-top: 10px;
     padding: 10px;
 }
+
 .button{
-    margin-top: 20px;
+    margin-top: 15px;
     background-color: #4c63b6;
     padding: 5px;
     width: 80px;
@@ -102,4 +103,9 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+.error{
+    margin-top: 0px;
+    color: red;
+    font-size: 15px;
 }

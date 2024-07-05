@@ -3,6 +3,12 @@ let addBtn=document.getElementById("addBtn");
 let todoList=document.getElementById("todoList");
 let saveBtn=document.getElementById("saveBtn");
 let editContainer=document.getElementById("editContainer");
+let searchInput=document.getElementById("searchInput");
+let errorPara=document.getElementById("errorPara");
+let errMsg=document.getElementById("errMsg");
+let backBtn=document.getElementById("backBtn");
+//let spinner=document.getElementById("spinner");
+let searchText="";
 
 
 function edit_item(todo,l_id){
@@ -76,15 +82,15 @@ function edit_item(todo,l_id){
     //console.log(edit_label);
 }
 
-function delete_item(todo){
+function delete_item(todo,l_id){
     let delete_item=document.getElementById(todo);
-    //console.log(delete_item);
+   // console.log(todo,l_id,delete_item);
     todoList.removeChild(delete_item);
     
     let ind=add_todo_list.findIndex(function(each){
         //let id=todo;
         //console.log(id);
-        if(todo===each.todo_id){
+        if(todo==="todoId"+each.u_no){
             return true;
         }
         else{
@@ -169,7 +175,7 @@ function display(item){
     };
     
     icon2.onclick=function(){
-        delete_item(todo_id);
+        delete_item(todo_id,l_id);
     };
 
     div_i1.appendChild(icon1);
@@ -191,19 +197,26 @@ function get_data(){
     else
         return parsing;
 }
-let add_todo_list=get_data();
-let count=add_todo_list.length;
-console.log(add_todo_list);
-for(let item of add_todo_list){
-    console.log(item);
-    display(item);
-    }
-//let res=localStorage.getItem("todos");
-//console.log(JSON.parse(res));
-//localStorage.removeItem("todos");
+
+backBtn.addEventListener("click",function(event){
+    searchInput.value="";
+
+    for(let item of add_todo_list){
+        //console.log(item);
+        display(item);
+        }
+});
+
+searchInput.addEventListener("blur",function(event){
+    errorPara.textContent="";
+});
 saveBtn.addEventListener("click",function(event){
     localStorage.setItem("todos",JSON.stringify(add_todo_list));
     //console.log(JSON.stringify(add_todo_list));
+});
+
+addBtn.addEventListener("blur",function(event){
+    errMsg.textContent="";
 });
 
 addBtn.addEventListener("click",function(event){
@@ -213,14 +226,77 @@ addBtn.addEventListener("click",function(event){
         text: taskInput.value,
         status: false,
     };
-    if(taskInput.value===""){
-        alert("Enter Valid Task!!!");
+    if(taskInput.value.length===0){
+        errMsg.textContent="Enter valid task*";
+        //alert("Enter Valid Task!!!");
     }
     else{
-    add_todo_list.push(todo);
-    //individualTodo(add_todo_list);
-    taskInput.value="";
-    display(todo,count);}
+        errMsg.textContent="";
+        add_todo_list.push(todo);
+        //individualTodo(add_todo_list);
+        taskInput.value="";
+        display(todo,count);}
 
 });
 
+function search(event){
+    //console.log(searchText);
+    //if(searchText===""){
+        //for(let item of add_todo_list){
+         //   console.log("empty");
+           // display(item);
+           // }
+    //}
+    //else{
+    
+    for(let each of add_todo_list){
+        
+        if(each.text.toLowerCase().includes(searchText.toLowerCase())){
+            //console.log(each.text);
+            errorPara.textContent="";
+            display(each);
+        }
+        else{
+            //if(d===undefined){
+            //console.log(event.target);
+            if(todoList.textContent==="")
+            errorPara.textContent="There are no such tasks*";
+            //console.log(d);
+        }
+//}
+    //console.log(display(each));
+}
+}
+
+function junction(event){
+    searchText=event.target.value;
+    todoList.textContent="";
+    //console.log(searchText);
+    if(searchText===""){
+        errorPara.textContent="";
+    }
+    else if(add_todo_list.length!==0){
+        errorPara.textContent="";
+        search(event);
+    }
+    else{
+        //console.log("error");   
+        errorPara.textContent="No tasks are avaliable, create a task*";
+        return;
+    }
+}
+
+searchInput.addEventListener("keyup",junction);
+
+let add_todo_list=get_data();
+let count=add_todo_list.length;
+//console.log(add_todo_list);
+
+for(let item of add_todo_list){
+    console.log(item);
+    display(item);
+    }
+//let res=localStorage.getItem("todos");
+//console.log(JSON.parse(res));
+//localStorage.removeItem("todos");
+//console.log(errorPara,add_todo_list.length);
