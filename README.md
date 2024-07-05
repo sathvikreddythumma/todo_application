@@ -1,8 +1,9 @@
 Todo Application
 This is a simple Todo application built with HTML,CSS,JS. It allows users to manage their tasks efficiently.
 
+ NOTE: Whatever you perform actions save it immediately.
+ 
 =>Features:
-    NOTE: Whatever you perform actions save it immediatly.
     
     1) CREATE TASK: Enter the title of the task in the input and click ADD button then task will append to a list.
 
